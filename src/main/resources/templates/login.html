@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Document sequence generator</title>
+</head>
+<body>
+
+<h1>Document sequence generator</h1>
+<p th:if="${isWrongPassword == true}">Krivo korisničko ime ili lozinka!</p>
+
+<form th:action="@{/login}" th:object="${user}" method="post">
+    <table>
+        <tr>
+            <td>Username</td>
+            <td><input type="text" th:field="*{username}"/></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" th:field="*{password}"/></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Login</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
