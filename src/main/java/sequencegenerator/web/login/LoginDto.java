@@ -1,6 +1,7 @@
 package sequencegenerator.web.login;
 
 public class LoginDto {
+
     private String username;
     private String password;
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Document sequence generator</title>
+</head>
+<body>
+
+<h1>Claim new Sequence</h1>
+
+<form th:action="@{/sequence/create}" th:object="${sequence}" method="post">
+    <table>
+        <tr>
+            <td>NO.</td>
+            <td><input type="text" readonly="readonly" th:field="*{seq}"/></td>
+        </tr>
+        <tr>
+            <td>Submitted By</td>
+            <td><input type="text" readonly="readonly" th:field="*{submittedBy}"/></td>
+        </tr>
+
+        <tr>
+            <td>Purpose </td>
+            <td><input type="text" th:field="*{purpose}"/></td>
+        </tr>
+
+        <tr>
+            <td>Date </td>
+            <td><input type="text" th:field="*{date}"/></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Cancel</button>
+            </td>
+            <td>
+                <button type="submit">Claim!</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
+

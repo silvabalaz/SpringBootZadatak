@@ -55,9 +55,7 @@ public class User {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = PasswordService.getPasswordHash(password);
-    }
+    public void setPassword(String password) { this.password = PasswordService.getPasswordHash(password); }
 
     @Override
     public String toString() {

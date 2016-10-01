@@ -1,16 +1,26 @@
 package sequencegenerator.service;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
+import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 /**
  * Created by silva on 18.09.16..
  */
 
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
 public class PasswordService {
 
     public static String getPasswordHash(String password) {
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String hashedPassword = passwordEncoder.encode(password);
-        return hashedPassword;
+
+
+        String hasshedPassword = DigestUtils.sha1Hex(password);
+
+        return hasshedPassword;
+
+
     }
+
 }

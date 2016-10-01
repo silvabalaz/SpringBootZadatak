@@ -8,6 +8,7 @@
 <h1>Document sequence generator</h1>
 <p th:if="${isWrongPassword == true}">Krivo korisničko ime ili lozinka!</p>
 
+
 <form th:action="@{/login}" th:object="${user}" method="post">
     <table>
         <tr>

@@ -3,6 +3,7 @@
 
 <body>
 Congratulations! Logirani ste.
+<td>Hello, <span th:text="${name}" />!</td>
 
 <h3>Generated Sequences</h3>
 <p th:each="user : ${users}">
@@ -14,6 +15,45 @@ Congratulations! Logirani ste.
 <div>---------------------------------------------------------</div>
 </p>
 
+
+<table >
+    <tr>
+        <td>
+        <button type="submit">Claim New</button>
+        </td>
+        <td>
+            <button type="submit">Search Filter</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>NO.</td>
+        <td>Submitted By</td>
+        <td>Purpose</td>
+        <td>Date</td>
+
+    </tr>
+    <tr>
+
+    </tr>
+    <tr>
+
+    </tr>
+    <tr>
+
+    </tr>
+    <tr>
+
+    </tr>
+    <tr>
+
+    </tr>
+    <tr>
+        <td>
+            <button type="submit">Page</button>
+        </td>
+    </tr>
+</table>
 
 </body>
 </html>

@@ -17,6 +17,22 @@ public class UserService {
     @Autowired
     private UserRepository repository;
 
+    public boolean save(User user){
+
+        boolean saved= false;
+        User u = repository.save(user);
+
+        logger.info("Saved prije: " + saved + "User:" + u.getUsername() + " " + u.getPassword() );
+        if(u != null) {
+            return saved=true;
+
+        }
+        logger.info("Saved poslije if-a : " + saved + "User:" + u.getUsername() + " " + u.getPassword() );
+        return saved;
+
+
+    }
+
     public boolean isValid(String username, String password) {
 
         boolean isValid = false;
@@ -27,10 +43,16 @@ public class UserService {
             !password.isEmpty()) {
 
             final String hashedPassword = PasswordService.getPasswordHash(password);
+            logger.info("hasshed password inside isValid: ------------------------->" + hashedPassword);
+            List<User> users = repository.findByUsername("silva");
+            logger.info(" is valid metoda: repository.findByUsername(username) " + username + "  silva " + repository.findByUsername("silva"));
+            logger.info(" repository.findAll(): " + repository.findAll());
+            logger.info("isValid: "+isValid+ " users " + users.size() );
 
-            List<User> users = repository.findByUsername(username);
             for (User user : users) {
+                logger.info("for: isValid: "+isValid+ " user:'" + user.getUsername() + "' password: '" + user.getPassword() + "'");
                 if (hashedPassword.equals(user.getPassword())) {
+                  //if(password.equals(user.getPassword())){
                     isValid = true;
                     break;
                 }
