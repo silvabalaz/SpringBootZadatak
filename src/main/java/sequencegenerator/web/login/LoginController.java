@@ -16,7 +16,6 @@ import sequencegenerator.service.UserService;
  * Created by silva on 20.09.16..
  */
 @Controller
-@SessionAttributes("name")
 @RequestMapping("login")
 public class LoginController {
 
@@ -42,17 +41,17 @@ public class LoginController {
         //logger.info("hasshed password: " + PasswordService.getPasswordHash(loginInfo.getPassword()));
 
         User u = new User();
-        u.setId((long)1);
+        u.setId(1);
         u.setUsername("silva");
         u.setPassword("1234");
         service.save(u);
 
         //logger.info(" u: " + u.getId() + " username: " + u.getUsername() + " password: " + u.getPassword());
         //logger.info( "service.save(u): " + service.save(u) );
-        //logger.info("service.isValid::  " + service.isValid(u.getUsername(), u.getPassword()));
-        logger.info("prije ifa model.put  " + model.put("name",loginInfo.getUsername()));
+        logger.info("service.isValid::  " + service.isValid(u.getUsername(), u.getPassword()));
+       // logger.info("prije ifa model.put  " + model.put("name",loginInfo.getUsername()));
         if(service.isValid(loginInfo.getUsername(), loginInfo.getPassword())){
-            model.put("name", loginInfo.getUsername());
+            //model.put("name", loginInfo.getUsername());
             return "redirect:/sequence/list";}
 
         model.put("isWrongPassword", true);

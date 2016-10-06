@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
-
+<header>
+    <div th:include="header::head"></div>
+</header>
 <body>
 Congratulations! Logirani ste.
-<td>Hello, <span th:text="${name}" />!</td>
+
 
 <h3>Generated Sequences</h3>
 <p th:each="user : ${users}">
@@ -12,11 +14,11 @@ Congratulations! Logirani ste.
 <h4>Password:</h4>
 <div th:text="${user.password}"></div>
 
+
 <div>---------------------------------------------------------</div>
 </p>
 
-
-<table >
+<table>
     <tr>
         <td>
         <button type="submit">Claim New</button>

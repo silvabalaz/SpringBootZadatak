@@ -3,10 +3,8 @@ package sequencegenerator.service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
 import sequencegenerator.model.Sequence;
-import sequencegenerator.repository.SequenceRepository;
+
 
 import java.util.Date;
 
@@ -16,15 +14,13 @@ import java.util.Date;
  */
 
 
-@Service
-@Qualifier("service")
 public class SequenceService {
 
 
     private static Logger logger = LoggerFactory.getLogger(SequenceService.class);
 
-    @Autowired
-    private SequenceRepository repository;
+   // @Autowired
+   // private SequenceRepository repository;
 
     public boolean save(long seq, String submittedBy, String purpose, Date date){
 

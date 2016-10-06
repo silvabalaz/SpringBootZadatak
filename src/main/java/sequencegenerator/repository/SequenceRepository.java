@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by silva on 27.09.16..
  */
-
+/*
 @Repository
 public interface SequenceRepository extends CrudRepository<Sequence, Long> {
 
@@ -16,3 +16,4 @@ public interface SequenceRepository extends CrudRepository<Sequence, Long> {
     List<Sequence> findAll();
 }
 
+*/
