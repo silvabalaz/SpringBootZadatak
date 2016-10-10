@@ -9,7 +9,7 @@
 <p th:if="${isWrongPassword == true}">Krivo korisničko ime ili lozinka!</p>
 
 
-<form th:action="@{/login}" th:object="${user}" method="post">
+<form th:action="@{/login}" th:object="${loginInfo}" method="post">
     <table>
         <tr>
             <td>Username</td>
@@ -26,5 +26,14 @@
         </tr>
     </table>
 </form>
+
+
+
+<h1>Result</h1>
+<p th:text="'Welcome, ' + ${loginInfo.username}" />
+<p th:text="'password: ' + ${loginInfo.password}" />
+
+
+<a href="/login">Submit another message</a>
 </body>
 </html>
